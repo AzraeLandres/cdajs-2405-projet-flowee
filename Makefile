@@ -128,12 +128,15 @@ migration-revert:
 seed: check-backend
 	docker exec -it $(BACKEND_CONTAINER) npx ts-node $(SEED_SCRIPT)
 
+.PHONY: seed-deliverables-tasks
+seed-deliverables-tasks: check-backend
+	docker exec -it $(BACKEND_CONTAINER) npx ts-node src/scripts/seedDeliverablesAndTasks.ts
 # ===============================
 # Postgres
 # ===============================
 .PHONY: psql
 psql:
-	docker exec -it flowee-db psql -U $$POSTGRES_USER
+	docker exec -it flowee-db psql -U $(POSTGRES_USER)
 
 .PHONY: reset-db
 reset-db:

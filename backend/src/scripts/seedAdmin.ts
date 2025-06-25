@@ -28,7 +28,7 @@ async function seed() {
   await dataSource.manager.save(account);
 
   const adminUser = dataSource.manager.create(CompanyUser, {
-    firstname: "Cyrielle",
+    firstname: "Azraël",
     lastname: "Admin",
     account,
     company,
