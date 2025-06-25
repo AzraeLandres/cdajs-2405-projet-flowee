@@ -15,7 +15,7 @@ export async function CreateTestData(
   clientEmail: string,
   description: string,
   startDate: string,
-  endDate: string
+  endDate: string,
 ) {
   const companyUserId = 3; // ou autre ID statique/temporaire pour test
 
@@ -68,7 +68,7 @@ export async function initTestData() {
     "contact@maisonverlaine.fr",
     "Mise en place d'une nouvelle boutique en ligne avec gestion du stock, des paiements et du catalogue produits.",
     "2024-09-15",
-    "2025-03-30"
+    "2025-03-30",
   );
   await CreateTestData(
     "Application mobile de réservation de soins",
@@ -76,7 +76,7 @@ export async function initTestData() {
     "resa@zenspace.fr",
     "Développement d'une application mobile permettant la réservation de soins bien-être et massages, avec gestion des plannings et des créneaux.",
     "2024-11-01",
-    "2025-05-20"
+    "2025-05-20",
   );
   await CreateTestData(
     "CRM sur-mesure pour PME industrielles",
@@ -84,7 +84,7 @@ export async function initTestData() {
     "support@techindus.io",
     "Développement d'une solution CRM adaptée aux besoins spécifiques des PME industrielles (suivi de prospects B2B, gestion des appels d'offres et pipeline de vente).",
     "2024-08-20",
-    "2025-02-28"
+    "2025-02-28",
   );
   await CreateTestData(
     "Plateforme RH - Onboarding collaborateur",
@@ -92,6 +92,6 @@ export async function initTestData() {
     "hr@humanfirst.io",
     "Mise en place d'un portail RH dédié à l'onboarding de nouveaux collaborateurs (signature contrat, checklist administrative, accès aux outils internes).",
     "2024-10-10",
-    "2025-03-31"
+    "2025-03-31",
   );
 }

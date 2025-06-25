@@ -7,7 +7,7 @@ import { TaskStatus } from "../enums/TaskStatus";
 
 function randomDate(start: Date, end: Date): string {
   const date = new Date(
-    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+    start.getTime() + Math.random() * (end.getTime() - start.getTime()),
   );
   return date.toISOString().split("T")[0];
 }
@@ -80,7 +80,7 @@ async function populateRealisticTestData() {
         endDate,
         assignDeliverableStatus(endDate),
         new Date().toISOString(),
-        Math.floor(Math.random() * 3)
+        Math.floor(Math.random() * 3),
       );
       deliverable.project = project;
       await dataSource.getRepository(Deliverable).save(deliverable);
@@ -92,7 +92,7 @@ async function populateRealisticTestData() {
           taskSamples[Math.floor(Math.random() * taskSamples.length)];
         const taskStart = randomDate(
           new Date("2025-03-01"),
-          new Date("2025-06-15")
+          new Date("2025-06-15"),
         );
         const taskEnd = randomDate(new Date(taskStart), new Date("2025-12-31"));
 
@@ -101,7 +101,7 @@ async function populateRealisticTestData() {
           `Task: ${taskName}`,
           taskStart,
           taskEnd,
-          assignTaskStatus(taskEnd)
+          assignTaskStatus(taskEnd),
         );
         task.deliverable = deliverable;
         await dataSource.getRepository(Task).save(task);
@@ -110,7 +110,7 @@ async function populateRealisticTestData() {
       console.info(
         `Deliverable "${theme}" added with ${numberOfTasks} tasks (${
           isLate ? "LATE" : "on schedule"
-        })`
+        })`,
       );
     }
   }
